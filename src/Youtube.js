@@ -240,6 +240,11 @@ THE SOFTWARE. */
       if (typeof this.options_.enablePrivacyEnhancedMode !== 'undefined' && this.options_.enablePrivacyEnhancedMode) {
         playerConfig.host = 'https://www.youtube-nocookie.com';
       }
+      if ((!!navigator.userAgent.match(/Trident/g) || !!navigator.userAgent.match(/MSIE/g)) &&
+          (window.location.protocol === 'file:')) {
+          this.trigger('play');
+          document.getElementsByClassName('vjs-control-bar')[0].setAttribute('style','display:none;');
+      }
 
       this.ytPlayer = new YT.Player(this.options_.techId, playerConfig);
     },
