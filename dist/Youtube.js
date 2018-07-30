@@ -244,6 +244,7 @@ THE SOFTWARE. */
           (window.location.protocol === 'file:')) {
           this.trigger('play');
           document.getElementsByClassName('vjs-control-bar')[0].setAttribute('style','display:none;');
+          document.getElementsByClassName('vjs-big-play-button')[0].setAttribute('style','display:none;');
       }
 
       this.ytPlayer = new YT.Player(this.options_.techId, playerConfig);
