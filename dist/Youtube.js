@@ -22,8 +22,7 @@ THE SOFTWARE. */
 /*global define, YT*/
 (function (root, factory) {
   if(typeof exports==='object' && typeof module!=='undefined') {
-    var videojs = require('video.js');
-    module.exports = factory(videojs.default || videojs);
+    module.exports = factory(require('video.js'));
   } else if(typeof define === 'function' && define.amd) {
     define(['videojs'], function(videojs){
       return (root.Youtube = factory(videojs));

@@ -22,8 +22,7 @@ THE SOFTWARE. */
 /*global define, YT*/
 (function (root, factory) {
   if(typeof exports==='object' && typeof module!=='undefined') {
-    var videojs = require('video.js');
-    module.exports = factory(videojs.default || videojs);
+    module.exports = factory(require('video.js'));
   } else if(typeof define === 'function' && define.amd) {
     define(['videojs'], function(videojs){
       return (root.Youtube = factory(videojs));
@@ -245,7 +244,6 @@ THE SOFTWARE. */
           (window.location.protocol === 'file:')) {
           this.trigger('play');
           document.getElementsByClassName('vjs-control-bar')[0].setAttribute('style','display:none;');
-          document.getElementsByClassName('vjs-big-play-button')[0].setAttribute('style','display:none;');
       }
 
       this.ytPlayer = new YT.Player(this.options_.techId, playerConfig);
