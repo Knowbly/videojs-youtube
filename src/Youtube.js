@@ -67,9 +67,6 @@ THE SOFTWARE. */
     dispose: function() {
       if (this.ytPlayer) {
         //Dispose of the YouTube Player
-        if (this.ytPlayer.stopVideo) {
-          this.ytPlayer.stopVideo();
-        }
         if (this.ytPlayer.destroy) {
           this.ytPlayer.destroy();
         }
